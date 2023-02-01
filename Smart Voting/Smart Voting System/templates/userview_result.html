@@ -1,0 +1,41 @@
+{% include 'userheader.html'%}
+<br> <br> <br>
+<style>
+table{
+	border:1px solid black;
+	padding:25px;
+	width: 80%;
+	text-align: center;
+	border-radius: 20px;
+}
+tr:hover {background-color:lightgrey}
+th{background-color:#5f4def;
+	color:white;
+}
+</style>
+<body>
+	<table align='center'>
+		<h1 align='center'><font color="blue">Vote Count</font></h1>
+		<tr>
+			<th>Name</th>
+			<th>Count</th>
+		</tr>
+		{% for row in data['re'] %}
+		<tr>
+			<td><b>{{row['NAME']}}</b></td>
+			<td><b>{{row['COUNT(`status`)']}}</b></td>
+			
+		</tr>
+		<tr>
+
+			<!-- td colspan="2" align="center">
+						<br><br><br><br>
+				<font size="20"><b>The Winner is:</b></font><font color="purple"><font size="30">{{row['NAME']}}</font>
+			</td> -->
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+<br><br><br><br><br><br><br>
+
+{% include 'footer.html'%}

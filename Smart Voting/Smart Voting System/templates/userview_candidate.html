@@ -1,0 +1,75 @@
+{% include 'userheader.html' %}
+<br><br><br><br><br>
+<style>
+.grid-container{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	background-color: white;
+	padding: 10px;
+	grid-row-gap: 5px;
+	grid-column-gap: 10px;
+}	
+.grid-item {
+	background-color: white;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 15px;
+	text-align: center;
+	}
+
+table{
+	background-color: lightyellow;
+	padding: 30px;
+	text-align: center;
+
+	}
+td{
+	width:50%;
+	padding: 20px;
+	font-family: Calibri;
+	font-size: 20px;
+	resize:vertical;
+}
+tr{
+	width:50%;
+	padding: 20px;
+
+	font-family: Calibri;
+	font-size: 20px;
+	resize:vertical;
+}
+input[type=text]{
+	width:95%;
+	padding: 20px;
+
+	font-family: Calibri;
+	font-size: 20px;
+	resize:vertical;
+/*	border:1px solid black;
+*/}
+	input[type=submit]{
+	width:95%;
+	padding: 20px;
+
+	font-family: Calibri;
+	font-size: 20px;
+	resize:vertical;
+}
+
+</style>
+    <body >
+    	<h1 align="center"> <font size="30">Candidate Details</font></h1>
+	<div class="grid-container">
+		
+			{% for row in data['can'] %}
+					<div class="grid-item">
+						<img src="/{{row['photo']}}" width="200" height="200"></img>	
+						<b>Logo:</b><img src="/{{row['image']}}" width="200" height="200"></img></b></h3><br>
+						<h3><b>Name:&nbsp;&nbsp;&nbsp;&nbsp;{{row['NAME']}}</b></h3><br>
+						<!-- <a href="/user/voting?id={{row['candidate_id']}}" style="text-decoration: none" class="btn btn-primary">PUT YOUR VOTE</a><br> -->
+					</div>
+			{% endfor %} 
+	</div>
+</body>
+
+{% include 'footer.html' %}
